@@ -376,7 +376,7 @@ class SuperBlock(BaseBlock):
 
     def draw_diagram(self):
 
-        g = pgv.AGraph(directed=True)
+        g = pgv.AGraph(strict=False, directed=True)
         g.graph_attr['rankdir'] = 'TB'
         g.graph_attr['splines'] = 'true'
         g.graph_attr['overlap'] = 'false'
