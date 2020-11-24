@@ -213,6 +213,7 @@ class SuperBlock(BaseBlock):
         header = '---- links of superblock "{}" ----'.format(self.name)
         print(header)
 
+        links = {}
         for (blk_to, port_to), (blk_from, port_from) in self.links.items():
             if blk_from is None:
                 s1 = self.name
@@ -228,13 +229,16 @@ class SuperBlock(BaseBlock):
                 s2 = self.subsystems[blk_to].name
                 p2 = self.subsystems[blk_to].input_names[port_to]
 
+            links[f"{s1}:{p1}"] = (f"{s2}:{p2}",
+                                   f'({blk_from}, {port_from}) -> ({blk_to},{port_to})')
 
-            print('{:>8}:{:<8} -> {:>8}:{:<8}'.format(s1, p1, s2, p2),
-                  end=('\n' if not raw else ' '))
+        c1 = max(len(key) for key in links.keys())
+        c2 = max(len(key[0]) for key in links.values())
 
-            if raw:
-                print('{!s:>9} -> {!s:<8}'.format((blk_from, port_from),
-                                                  (blk_to, port_to)))
+        for k,v in links.items():
+            print(f"{k:<{c1}}", '->', f"{v[0]:<{c2}}",
+                  end=f'{" "+v[1] if raw else ""}\n')
+
         print('-' * len(header))
 
 
