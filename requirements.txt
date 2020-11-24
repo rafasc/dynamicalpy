@@ -1,0 +1,28 @@
+backcall==0.2.0
+cycler==0.10.0
+decorator==4.4.2
+# Editable Git install with no remote (dynamicalpy==0.0.0)
+-e /home/rafasc/tese/dynamicalpy
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+kiwisolver==1.3.1
+matplotlib==3.3.3
+networkx==2.5
+numpy==1.19.4
+parso==0.7.1
+pexpect==4.8.0
+pickleshare==0.7.5
+Pillow==8.0.1
+prompt-toolkit==3.0.8
+ptyprocess==0.6.0
+Pygments==2.7.2
+pygraphviz==1.6
+pyparsing==2.4.7
+PyQt5==5.15.2
+PyQt5-sip==12.8.1
+python-dateutil==2.8.1
+scipy==1.5.4
+six==1.15.0
+traitlets==5.0.5
+wcwidth==0.2.5
